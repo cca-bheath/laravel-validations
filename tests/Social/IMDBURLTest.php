@@ -20,13 +20,15 @@ class IMDBURLTest extends TestCase
         ];
 
         $this->assertTrue(
-            validator(['url' => 'https://www.imdb.com/name/nm0000134',],
+            validator(
+                ['url' => 'https://www.imdb.com/name/nm0000134',],
                 $rule
             )->passes()
         );
 
         $this->assertTrue(
-            validator(['url' => 'https://imdb.com/name/nm0000134/',],
+            validator(
+                ['url' => 'https://imdb.com/name/nm0000134/',],
                 $rule
             )->passes()
         );
@@ -45,11 +47,13 @@ class IMDBURLTest extends TestCase
             ],
         ];
 
-        $result = validator(['url' => 'https://imdb.com/',],
+        $result = validator(
+            ['url' => 'https://imdb.com/',],
             $rule
         );
         $this->assertFalse($result->passes());
-        $this->assertSame('The url must be a valid IMDB URL',
+        $this->assertSame(
+            'The url must be a valid IMDB URL',
             $result->errors()->first()
         );
     }
@@ -67,12 +71,14 @@ class IMDBURLTest extends TestCase
             ],
         ];
 
-        $result = validator(['url' => 'https://myspace.com/cca',],
+        $result = validator(
+            ['url' => 'https://myspace.com/cca',],
             $rule
         );
 
         $this->assertFalse($result->passes());
-        $this->assertSame('The url must be a valid IMDB URL',
+        $this->assertSame(
+            'The url must be a valid IMDB URL',
             $result->errors()->first()
         );
     }

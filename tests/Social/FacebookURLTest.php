@@ -20,13 +20,15 @@ class FacebookURLTest extends TestCase
         ];
 
         $this->assertTrue(
-            validator(['url' => 'https://www.facebook.com/castingcallsamerica',],
+            validator(
+                ['url' => 'https://www.facebook.com/castingcallsamerica',],
                 $rule
             )->passes()
         );
 
         $this->assertTrue(
-            validator(['url' => 'https://facebook.com/castingcallsamerica',],
+            validator(
+                ['url' => 'https://facebook.com/castingcallsamerica',],
                 $rule
             )->passes()
         );
@@ -45,11 +47,13 @@ class FacebookURLTest extends TestCase
             ],
         ];
 
-        $result = validator(['url' => 'https://facebook.com/',],
+        $result = validator(
+            ['url' => 'https://facebook.com/',],
             $rule
         );
         $this->assertFalse($result->passes());
-        $this->assertSame('The url must be a valid Facebook URL',
+        $this->assertSame(
+            'The url must be a valid Facebook URL',
             $result->errors()->first()
         );
     }
@@ -67,12 +71,14 @@ class FacebookURLTest extends TestCase
             ],
         ];
 
-        $result = validator(['url' => 'https://myspace.com/cca',],
+        $result = validator(
+            ['url' => 'https://myspace.com/cca',],
             $rule
         );
 
         $this->assertFalse($result->passes());
-        $this->assertSame('The url must be a valid Facebook URL',
+        $this->assertSame(
+            'The url must be a valid Facebook URL',
             $result->errors()->first()
         );
     }
