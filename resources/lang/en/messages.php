@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'phone' => [
+        'us' => 'The :attribute must be a valid US cell phone number',
+    ],
+
     'social' => [
         'facebook_url'     => 'The :attribute must be a valid Facebook URL',
         'imdb_url'         => 'The :attribute must be a valid IMDB URL',
