@@ -14,4 +14,8 @@ return [
         'vimeo_player_url' => 'The :attribute must be a valid Vimeo Player URL',
         'youtube_url'      => 'The :attribute must be a valid Youtube URL',
     ],
+
+    'web' => [
+        'tld' => 'The :attribute must have a valid TLD',
+    ],
 ];
