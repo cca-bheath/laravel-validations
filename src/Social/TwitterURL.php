@@ -6,6 +6,8 @@ use Illuminate\Contracts\Validation\Rule;
 
 class TwitterURL implements Rule
 {
+    public const REGEX = '/^(https:\/\/)(www\.)?twitter.com\/[\w]+(\/)?$/';
+
     /** @var string */
     protected $attribute;
 
@@ -21,7 +23,7 @@ class TwitterURL implements Rule
     {
         $this->attribute = $attribute;
 
-        return (bool) preg_match('/^(https:\/\/)(www\.)?twitter.com\/[\w]+(\/)?$/', $value);
+        return (bool) preg_match(self::REGEX, $value);
     }
 
     /**

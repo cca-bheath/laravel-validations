@@ -6,6 +6,8 @@ use Illuminate\Contracts\Validation\Rule;
 
 class YoutubeURL implements Rule
 {
+    public const REGEX = '/^(https:\/\/)(www\.)?(youtube\.com|youtu\.be)\/(watch\?v=|embed\/)?[\w]+(\?t=\d*)?(\/)?$/';
+
     /** @var string */
     protected $attribute;
 
@@ -21,7 +23,7 @@ class YoutubeURL implements Rule
     {
         $this->attribute = $attribute;
 
-        return (bool) preg_match('/^(https:\/\/)(www\.)?(youtube\.com|youtu\.be)\/(watch\?v=|embed\/)?[\w]+(\?t=\d*)?(\/)?$/', $value);
+        return (bool) preg_match(self::REGEX, $value);
     }
 
     /**

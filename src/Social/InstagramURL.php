@@ -6,6 +6,8 @@ use Illuminate\Contracts\Validation\Rule;
 
 class InstagramURL implements Rule
 {
+    public const REGEX = '/^(?:https:\/\/)(www\.)?instagram.com\/[\w]+(\/)?$/';
+
     /** @var string */
     protected $attribute;
 
@@ -22,7 +24,7 @@ class InstagramURL implements Rule
     {
         $this->attribute = $attribute;
 
-        return (bool) preg_match('/^(?:https:\/\/)(www\.)?instagram.com\/[\w]+(\/)?$/', $value);
+        return (bool) preg_match(self::REGEX, $value);
     }
 
     /**

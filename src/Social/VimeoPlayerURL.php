@@ -6,6 +6,8 @@ use Illuminate\Contracts\Validation\Rule;
 
 class VimeoPlayerURL implements Rule
 {
+    public const REGEX = '/^(https:\/\/)player.vimeo.com\/video\/[\w]+(\/)?$/';
+
     /** @var string */
     protected $attribute;
 
@@ -21,7 +23,7 @@ class VimeoPlayerURL implements Rule
     {
         $this->attribute = $attribute;
 
-        return (bool) preg_match('/^(https:\/\/)player.vimeo.com\/video\/[\w]+(\/)?$/', $value);
+        return (bool) preg_match(self::REGEX, $value);
     }
 
     /**

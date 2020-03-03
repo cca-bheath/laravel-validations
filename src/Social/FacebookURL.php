@@ -6,6 +6,8 @@ use Illuminate\Contracts\Validation\Rule;
 
 class FacebookURL implements Rule
 {
+    public const REGEX = '/^(https:\/\/)(www\.)?(facebook\.com)\/?([\w\.]*)\/?$/';
+
     /** @var string */
     protected $attribute;
 
@@ -22,7 +24,7 @@ class FacebookURL implements Rule
         $this->attribute = $attribute;
 
         preg_match_all(
-            '/^(https:\/\/)(www\.)?(facebook\.com)\/?([\w\.]*)\/?$/',
+            self::REGEX,
             $value,
             $matches
         );

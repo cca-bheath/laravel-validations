@@ -6,6 +6,8 @@ use Illuminate\Contracts\Validation\Rule;
 
 class IMDBURL implements Rule
 {
+    public const REGEX = '/^(?:https:\/\/)(www\.)?imdb.com\/name\/[\w]+(\/)?$/';
+
     /** @var string */
     protected $attribute;
 
@@ -21,7 +23,7 @@ class IMDBURL implements Rule
     {
         $this->attribute = $attribute;
 
-        return (bool) preg_match('/^(?:https:\/\/)(www\.)?imdb.com\/name\/[\w]+(\/)?$/', $value);
+        return (bool) preg_match(self::REGEX, $value);
     }
 
     /**
