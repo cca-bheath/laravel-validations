@@ -12,5 +12,6 @@ return [
         'twitter_url'      => 'The :attribute must be a valid Twitter URL',
         'vimeo_url'        => 'The :attribute must be a valid Vimeo URL',
         'vimeo_player_url' => 'The :attribute must be a valid Vimeo Player URL',
+        'youtube_url'      => 'The :attribute must be a valid Youtube URL',
     ],
 ];
