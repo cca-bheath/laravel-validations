@@ -2,4 +2,4 @@
 A set of common Laravel validations rules
 
 # Install
-`composer require bheath/laravel-validations`
+`composer require cca-bheath/laravel-validations`
