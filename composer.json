@@ -29,8 +29,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "CCA\LaravelValidations\LaravelValidationsServiceProvider"
+                "CCA\\LaravelValidations\\LaravelValidationsServiceProvider"
             ]
         }
-    },
+    }
 }
