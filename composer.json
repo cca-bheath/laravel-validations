@@ -25,5 +25,12 @@
         "psr-4": {
             "CCA\\LaravelValidations\\Tests\\": "tests"
         }
-    }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CCA\LaravelValidations\LaravelValidationsServiceProvider"
+            ]
+        }
+    },
 }
